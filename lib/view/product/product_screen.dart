@@ -1,9 +1,10 @@
+import 'package:animation_widget/widget/how_many.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:premium_shop/view/product/widget/how_many.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:readmore/readmore.dart';
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({super.key});
@@ -32,7 +33,7 @@ class _ProductScreenState extends State<ProductScreen> {
                     itemCount: 4,
                     itemBuilder: (context, index) {
                       return Image.asset(
-                        "asset/watch.png",
+                        "assets/watch.png",
                         height: 400,
                         width: double.infinity,
                         fit: BoxFit.fitWidth,
@@ -64,8 +65,8 @@ class _ProductScreenState extends State<ProductScreen> {
                         decoration: const BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(16),
-                            topRight: Radius.circular(16),
+                            topLeft: Radius.circular(12),
+                            topRight: Radius.circular(12),
                           ),
                         ),
                       ),
@@ -90,14 +91,14 @@ class _ProductScreenState extends State<ProductScreen> {
                         ),
                       ),
                       const Spacer(),
-                      SvgPicture.asset(
-                        "asset/favorite.svg",
+                      Image.asset(
+                        "assets/favorite.png",
                         height: 24,
                         width: 24,
                       ),
                       const Gap(8),
-                      SvgPicture.asset(
-                        "asset/Send.svg",
+                      Image.asset(
+                        "assets/Send.png",
                         height: 24,
                         width: 24,
                       ),
@@ -124,8 +125,8 @@ class _ProductScreenState extends State<ProductScreen> {
                         ),
                       ),
                       const Gap(12),
-                      SvgPicture.asset(
-                        "asset/Group 41260.svg",
+                      Image.asset(
+                        "assets/carbon_delivery.png",
                         width: 12,
                         height: 12,
                       ),
@@ -150,13 +151,23 @@ class _ProductScreenState extends State<ProductScreen> {
                     ),
                   ),
                   const Gap(4),
-                  Text(
-                    "Xiaomi kompaniyasidan ajoyib smart soat AmazeFit 2.0, suvga chidamli, 3400 mAh",
+                  ReadMoreText(
+                    "Xiaomi kompaniyasidan ajoyib smart soat AmazeFit 2.0, suvga chidamli, 3400 mAhXiaomi kompaniyasidan ajoyib smart soat AmazeFit 2.0, suvga chidamli, 3400 mAh",
+                    trimLines: 2,
+                    trimLength: 5,
                     style: GoogleFonts.urbanist(
                       color: const Color(0xFF404E67),
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                     ),
+                    colorClickableText: Colors.pink,
+                    moreStyle:
+                        const TextStyle(color: Colors.green, fontSize: 10),
+                    lessStyle:
+                        const TextStyle(color: Colors.green, fontSize: 10),
+                    trimMode: TrimMode.Line,
+                    trimCollapsedText: " ko'proq",
+                    trimExpandedText: " kamroq",
                   ),
                   const Gap(13),
                   Row(
